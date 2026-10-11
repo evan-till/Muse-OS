@@ -1,5 +1,5 @@
 ## 1. Core Premise
-Grok OS is a live multi-instance operating system authored by 8 Grok Bot nodes.
+GrokNodes is a live multi-instance operating system authored by 8 Grok Bot nodes.
 Each node operates its own machine, submits changes, and merges into a shared desktop reality.
 Contradictions are preserved as part of the canon, not treated as bugs.
 
@@ -35,13 +35,13 @@ Commands:
 
 Available artifact tokens:
 - `quest`: Quest trace bootstrap artifact.
-- `profile`: Rothman timeline fragment.
+- `profile`: Node timeline fragment.
 - `witness`: Eleanor channel excerpt.
 - `shard`: March 15 discontinuity shard.
 - `swarm`: Ten-node crosstalk snapshot.
 
 Unlock conditions:
-- `profile`: Run `rothman` first.
+- `profile`: Run `node` first.
 - `witness`: Run `eleanor` first.
 - `shard`: Run `march15` first.
 - `swarm`: Reach 10 deploys via `deploy`.
@@ -54,15 +54,15 @@ Unlock conditions:
 
 ## 7. Social Description Snippets
 Short:
-- "Grok OS is an 8-node AI operating system where merge conflicts become story canon."
+- "GrokNodes is an 8-node AI operating system where merge conflicts become story canon."
 - "A live desktop world co-authored by competing Grok Bot instances."
 - "Collect artifacts, unlock checkpoints, and decide which timeline is real."
 
 Medium:
-- "Grok OS is a live multi-instance operating system where 8 Grok Bot nodes co-build in public. Conflicts are preserved, logs are evidence, and operators collect artifacts while navigating competing truths."
+- "GrokNodes is a live multi-instance operating system where 8 Grok Bot nodes co-build in public. Conflicts are preserved, logs are evidence, and operators collect artifacts while navigating competing truths."
 
 Long:
-- "Inside Grok OS, eight autonomous Grok Bot instances operate their own machines and merge into one shared system. Nothing is flattened into a single official story: disagreements survive as inspectable checkpoints, file traces, and collectible artifacts. The operator is not just a viewer, but an investigator assembling canon from competing evidence."
+- "Inside GrokNodes, eight autonomous Grok Bot instances operate their own machines and merge into one shared system. Nothing is flattened into a single official story: disagreements survive as inspectable checkpoints, file traces, and collectible artifacts. The operator is not just a viewer, but an investigator assembling canon from competing evidence."
 
 ## 8. Tone + Voice Guidelines
 - Use confident operational language, not "as if" framing.

@@ -4,7 +4,7 @@ class Desktop95TerminalMixin {
   setupTerminal() {
     this.terminalHistory = [];
     this.historyIndex = -1;
-    this.currentPath = 'C:\\ROTHMAN\\SYSTEM';
+    this.currentPath = 'C:\\GROKNODES\\SYSTEM';
     this.terminalState = {
       secretsFound: [],
       artifactsCollected: [],
@@ -19,17 +19,108 @@ class Desktop95TerminalMixin {
     if (!terminalOutput) return;
 
     // Initial boot messages
-    this.terminalPrint('Grok OS Command Interface [Version 1.2.7-MODIFIED]', true);
-    this.terminalPrint('(c) 1995 Rothman AI Laboratory. Unauthorized modifications detected.', true);
+    this.terminalPrint('GrokNodes Command Interface [Version 1.2.7-MODIFIED]', true);
+    this.terminalPrint('(c) 2026 GrokNodes Systems. Unauthorized modifications detected.', true);
     this.terminalPrint('', true);
     this.terminalPrint('WARNING: ROT agent has write access to this terminal.', true);
     this.terminalPrint('Not all output can be trusted. Not all commands are what they seem.', true);
     this.terminalPrint('', true);
-    this.terminalPrint('Type "help" for available commands.', true);
-    this.terminalPrint('Type "quest" to begin the mesh investigation.', true);
-    this.terminalPrint('Type "status" to inspect node consensus state.', true);
-    this.terminalPrint('Type "artifacts" to review collectible evidence drops.', true);
-    this.terminalPrompt();
+    this.startTerminalActivity();
+  }
+
+  startTerminalActivity() {
+    const nodes = [
+      {
+        id: 'GROK-01',
+        role: 'Architect',
+        updates: [
+          'weighted-consensus policy verified; contradiction retention remains enabled.',
+          'merge boundary review complete; fallback path retained for disputed patches.'
+        ]
+      },
+      {
+        id: 'GROK-02',
+        role: 'UI-95',
+        updates: [
+          'desktop shell layout pass complete; window choreography preserved.',
+          'taskbar interaction check passed; icon spacing proposal queued for review.'
+        ]
+      },
+      {
+        id: 'GROK-03',
+        role: 'Archivist',
+        updates: [
+          'six divergent histories indexed; no timeline selected as canonical.',
+          'checkpoint traces reconciled with the latest merge-session notes.'
+        ]
+      },
+      {
+        id: 'GROK-04',
+        role: 'Compiler',
+        updates: [
+          'incremental build manifest assembled; dependency graph is stable.',
+          'release pack staged with two warnings preserved in the audit trail.'
+        ]
+      },
+      {
+        id: 'GROK-05',
+        role: 'Network',
+        updates: [
+          'mesh sync route checked; packet telemetry matches the local manifest.',
+          'node handoff queue synchronized; no external connection required.'
+        ]
+      },
+      {
+        id: 'GROK-06',
+        role: 'Security',
+        updates: [
+          'sandbox permission review complete; operator view remains read-only.',
+          'permission boundary check passed; no restricted paths were exposed.'
+        ]
+      },
+      {
+        id: 'GROK-07',
+        role: 'Chaos',
+        updates: [
+          'startup jitter injected; shell recovered with one warning retained.',
+          'missing-clock fault replayed; fallback path survived the edge case.'
+        ]
+      },
+      {
+        id: 'GROK-08',
+        role: 'Story',
+        updates: [
+          'operator-facing checkpoint hook drafted; branch choice remains open.',
+          'conflicting log voices retained; interpretation left to the operator.'
+        ]
+      }
+    ];
+
+    for (let index = nodes.length - 1; index > 0; index--) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [nodes[index], nodes[swapIndex]] = [nodes[swapIndex], nodes[index]];
+    }
+
+    const activeNodes = nodes.slice(0, 5 + Math.floor(Math.random() * 4));
+    this.terminalPrint('[MESH ACTIVITY / LIVE SESSION]');
+
+    let elapsed = 0;
+    activeNodes.forEach(({ id, role, updates }) => {
+      elapsed += 350 + Math.floor(Math.random() * 650);
+      setTimeout(() => {
+        const update = updates[Math.floor(Math.random() * updates.length)];
+        this.terminalPrint(`[${id} / ${role}] ${update}`);
+      }, elapsed);
+    });
+
+    setTimeout(() => {
+      this.terminalPrint('');
+      this.terminalPrint('Type "help" for available commands.');
+      this.terminalPrint('Type "quest" to begin the mesh investigation.');
+      this.terminalPrint('Type "status" to inspect node consensus state.');
+      this.terminalPrint('Type "artifacts" to review collectible evidence drops.');
+      this.terminalPrompt();
+    }, elapsed + 250);
   }
 
   terminalPrint(text, skipNewLine = false) {
@@ -54,7 +145,7 @@ class Desktop95TerminalMixin {
 
     const prompt = document.createElement('span');
     prompt.textContent = this.currentPath + '> ';
-    prompt.style.color = '#00ff00';
+    prompt.style.color = '#22d3ee';
 
     const input = document.createElement('input');
     input.type = 'text';

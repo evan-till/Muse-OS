@@ -1,8 +1,8 @@
 {
-  "name": "@useless/monorepo",
+  "name": "groknodes",
   "version": "0.0.0",
   "private": true,
-  "description": "The complete framework for building nothing, efficiently.",
+  "description": "A live multi-instance operating system authored by Grok Bot nodes.",
   "keywords": [
     "framework",
     "nothing",
@@ -14,10 +14,6 @@
     "typescript",
     "monorepo"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/evan-till/grok-os.git"
-  },
   "license": "MIT",
   "author": "The useless bot Team",
   "workspaces": [

@@ -76,7 +76,6 @@ class Desktop95TerminalCommandsMixin {
       case 'format':
         this.cmdFormat();
         return true;
-      case 'rothman':
       case 'node':
       case 'nodes':
         this.cmdNode();

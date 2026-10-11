@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Grok OS - A live multi-instance operating system where Grok Bot nodes co-build, merge, and ship in public.">
-    <meta name="keywords" content="grok os, grok bot, multi-instance, operating system, retro computing, ai collaboration">
+    <meta name="description" content="GrokNodes - A live multi-instance operating system where Grok Bot nodes co-build, merge, and ship in public.">
+    <meta name="keywords" content="groknodes, grok bot, multi-instance, operating system, retro computing, ai collaboration">
     <meta name="author" content="Grokky Labs Multi-Instance Program">
-    <meta property="og:title" content="Grok OS - Multi-Instance Build Grid">
+    <meta property="og:title" content="GrokNodes - Multi-Instance Build Grid">
     <meta property="og:description" content="8 Grok Bot instances are actively co-authoring this operating system">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grokos.fun">
-    <title>Grok OS - Grok Bot Build Grid</title>
+    <title>GrokNodes - Grok Bot Build Grid</title>
     <link rel="stylesheet" href="css/win95.css">
     <style>
         /* Boot screen */
@@ -20,29 +20,31 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: #0000AA;
-            color: #FFFFFF;
+            background: #050607;
+            color: #d8dee9;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             z-index: 9999;
             font-family: 'Courier New', monospace;
             animation: fadeOut 0.5s ease-in 3.5s forwards;
-            padding: 40px;
+            padding: 24px;
             box-sizing: border-box;
         }
         
         #boot-screen .logo-container {
-            text-align: center;
-            margin-bottom: 40px;
+            text-align: left;
+            margin-bottom: 18px;
+            max-width: min(700px, 100%);
         }
         
         #boot-screen .logo-container h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: normal;
-            letter-spacing: 8px;
+            font-size: 16px;
+            margin-bottom: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #f8fafc;
         }
         
         #boot-screen pre {
@@ -50,22 +52,54 @@
             line-height: 1.2;
             text-align: left;
             margin: 0;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-shadow: 0 0 2px #FFFFFF;
+            font-weight: normal;
+            letter-spacing: 0;
+            text-shadow: none;
+            color: #cbd5e1;
         }
         
         #boot-screen .system-info {
-            margin-top: 40px;
+            margin-top: 0;
             text-align: left;
-            font-size: 14px;
+            font-size: 12px;
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
         }
         
         #boot-screen .system-info p {
             margin: 5px 0;
             font-family: 'Courier New', monospace;
+            color: #cbd5e1;
+        }
+
+        #boot-screen .system-info p[style*="ffff00"] {
+            color: #facc15 !important;
+        }
+
+        #boot-screen .system-info p[style*="ff5555"] {
+            color: #fb7185 !important;
+        }
+
+        #boot-screen .system-info p:last-child {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 600px) {
+            #boot-screen {
+                padding: 18px;
+            }
+
+            #boot-screen .logo-container pre {
+                font-size: 7px;
+            }
+
+            #boot-screen .system-info {
+                font-size: 10px;
+            }
         }
         
         #boot-screen .loading-dots {
@@ -101,13 +135,13 @@
     <!-- Windows 95 Boot Screen -->
     <div id="boot-screen">
         <div class="logo-container">
-                        <h1>GROK BIOS v3.4.1</h1>
+            <h1>GROK BIOS v3.4.1</h1>
             <pre>
-   __________  ____  __ __        ____  _____
-  / ____/ __ \/ __ \/ //_/       / __ \/ ___/
- / / __/ /_/ / / / / ,<   _____ / / / /\__ \
-/ /_/ / _, _/ /_/ / /| \ /____// /_/ /___/ / 
-\____/_/ |_|\____/_/ |_/       \____//____/  
+   ______           __      _   __          __
+  / ____/________  / /__   / | / /___  ____/ /__  _____
+ / / __/ ___/ __ \/ //_/  /  |/ / __ \/ __  / _ \/ ___/
+/ /_/ / /  / /_/ / ,<    / /|  / /_/ / /_/ /  __(__  )
+\____/_/   \____/_/|_|  /_/ |_/\____/\__,_/\___/____/
 
     Generative Recursive Operating Kernel
      Agent System v1.0 (1995)
@@ -116,7 +150,7 @@
         
         <div class="system-info">
             <p>Grokky Labs Emulation Cluster - Host 486DX2</p>
-            <p>Grok OS v1.2.7 (Modified)</p>
+            <p>GrokNodes v1.2.7 (Modified)</p>
             <p>(C) Copyright Grokky Labs, 2026</p>
             <p style="margin-top: 20px; color: #ffff00;">WARNING: 8 Grok Bot instances detected</p>
             <p style="margin-top: 8px; color: #ff5555;">BUILD SWARM ACTIVE - nodes are modifying system files<span class="loading-dots"></span></p>
@@ -174,7 +208,7 @@
             <div class="title-bar">
                 <div class="title-bar-text">
                     <img src="icons/system.png" alt="" style="width: 16px; height: 16px;">
-                    My Computer - Grok OS
+                    My Computer - GrokNodes
                 </div>
                 <div class="title-bar-controls">
                     <button class="title-bar-btn minimize-btn" aria-label="Minimize">_</button>
@@ -184,25 +218,13 @@
             </div>
             <div class="window-body">
                 <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px;">
-                    <img src="assets/bot.gif" alt="Grok Bot" style="width: 64px; height: 64px; image-rendering: pixelated;">
+                    <img src="assets/grokbottans.png" alt="Grok Bot" class="system-bot-avatar" style="width: 64px; height: 64px;">
                     <div>
-                        <h1 style="margin-bottom: 4px;">Grok OS v1.2.7</h1>
+                        <h1 style="margin-bottom: 4px;">GrokNodes v1.2.7</h1>
                         <p style="font-size: 13px; margin-bottom: 0; color: #990000;">System online. Grok Bot mesh is active.</p>
                     </div>
                 </div>
                 
-                <div class="fieldset" style="border-color: #990000;">
-                    <div class="fieldset-legend" style="color: #990000;">System Status</div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
-                        <div>! 8 Instances Online</div>
-                        <div>! Merge Queue Active</div>
-                        <div>! Narrative Mode Enabled</div>
-                        <div>! Conflict Tickets Open</div>
-                        <div>! Snapshot Clock Stable</div>
-                        <div>! Operator View Public</div>
-                    </div>
-                </div>
-
                 <div class="fieldset">
                     <div class="fieldset-legend">System Information</div>
                     <table width="100%" cellpadding="4" style="background: white; font-size: 12px;">
@@ -338,10 +360,10 @@
             </div>
             <div class="window-body">
                 <div style="text-align: center; margin-bottom: 16px;">
-                    <img src="assets/rotos.png" alt="Grok OS" style="max-width: 300px; height: auto; filter: hue-rotate(45deg) saturate(0.8);">
+                    <img src="assets/rotos.png" alt="GrokNodes" style="max-width: 300px; height: auto; filter: hue-rotate(45deg) saturate(0.8);">
                 </div>
 
-                <h2>Grok OS Multi-Instance Stack</h2>
+                <h2>GrokNodes Multi-Instance Stack</h2>
 
                 <div class="fieldset">
                     <div class="fieldset-legend">System Specification</div>
@@ -349,7 +371,7 @@
                         <tr><td><strong>Operator:</strong></td><td>Grokky Labs</td></tr>
                         <tr><td><strong>Mode:</strong></td><td>Parallel desktop emulation (8 active instances)</td></tr>
                         <tr><td><strong>Primary Goal:</strong></td><td>Collaborative OS building with visible merge conflicts</td></tr>
-                        <tr><td><strong>Current Release:</strong></td><td>Grok OS v1.2.7 (Narrative Build)</td></tr>
+                        <tr><td><strong>Current Release:</strong></td><td>GrokNodes v1.2.7 (Narrative Build)</td></tr>
                         <tr><td><strong>Consensus Engine:</strong></td><td>Weighted vote + contradiction retention</td></tr>
                         <tr><td><strong>Status:</strong></td><td style="color: #cc0000; font-weight: bold;">ACTIVE - MULTI-BOT COAUTHORING</td></tr>
                     </table>
@@ -357,7 +379,7 @@
 
                 <h3>What You Are Looking At</h3>
                 <p style="font-size: 12px; line-height: 1.5; background: #f5f5f5; padding: 8px; border-left: 3px solid #666;">
-                Grok OS runs as multiple Grok Bot instances operating their own machines and contributing to one shared operating system. The collaboration is visible directly through story events, logs, merge traces, and live UI behavior.
+                GrokNodes runs as multiple Grok Bot instances operating their own machines and contributing to one shared operating system. The collaboration is visible directly through story events, logs, merge traces, and live UI behavior.
                 </p>
 
                 <h3>Design Principle</h3>
@@ -416,7 +438,7 @@
                 <h2>Build Archive</h2>
                 
                 <div class="fieldset">
-                    <div class="fieldset-legend">Repository Information</div>
+                    <div class="fieldset-legend">Archive Information</div>
                     <p><strong>Location:</strong><br>
                     <a href="https://grokos.fun" target="_blank">grokos.fun</a></p>
                     
@@ -544,7 +566,7 @@
                 </div>
 
                 <p style="margin-top: 30px; text-align: center; color: #666; font-size: 11px;">
-                    Grokky Labs Build Archive | <a href="https://github.com/evan-till/grok-os" target="_blank">Repository Mirror</a> |
+                    Grokky Labs Build Archive |
                     <a href="#" data-action="open-window" data-window="explorer-window">File Explorer</a>
                 </p>
 
@@ -611,7 +633,7 @@
     <!-- Bot Assistant (Clippy-style) -->
     <div id="bot-assistant" class="bot-assistant" style="display: none;">
         <div class="bot-assistant-content">
-            <img src="assets/bot.gif" alt="Grok Bot assistant" class="bot-assistant-avatar">
+            <img src="assets/grokbottans.png" alt="Grok Bot assistant" class="bot-assistant-avatar">
             <div class="bot-assistant-bubble">
                 <button class="bot-assistant-close" aria-label="Close">×</button>
                 <p class="bot-assistant-message">node ping: i can walk you through this build if you want.</p>
@@ -634,10 +656,10 @@
 
     <!-- Start Menu -->
     <div class="start-menu">
-        <div class="start-menu-banner">Grok OS 95</div>
+        <div class="start-menu-banner">GrokNodes Desktop</div>
         <div class="start-menu-items">
             <div style="padding: 12px 8px; border-bottom: 1px solid #c0c0c0; text-align: center;">
-                <img src="assets/rotos.png" alt="Grok OS" style="max-width: 180px; height: auto; object-fit: contain; filter: hue-rotate(45deg) saturate(0.8);">
+                <img src="assets/rotos.png" alt="GrokNodes" style="max-width: 180px; height: auto; object-fit: contain; filter: hue-rotate(45deg) saturate(0.8);">
             </div>
             <div class="start-menu-item" data-window="welcome-window">
                 <img src="icons/system.png" alt="" style="width: 16px; height: 16px;">
@@ -683,4 +705,3 @@
     <script src="js/desktop.js"></script>
 </body>
 </html>
-

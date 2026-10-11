@@ -60,6 +60,10 @@ class Desktop95 {
       this.openWindow('welcome-window', { offsetX: -150, offsetY: -50 });
       setTimeout(() => {
         this.openWindow('about-window', { offsetX: 150, offsetY: 50 });
+        setTimeout(() => {
+          this.openWindow('cmd-window', { offsetX: -120, offsetY: 100 });
+          this.layoutStartupWindows();
+        }, 500);
       }, 500);
     }, 2200); // Delay until after boot screen
     
@@ -78,6 +82,59 @@ class Desktop95 {
     
     // Setup button and link handlers
     this.setupButtonHandlers();
+  }
+
+  layoutStartupWindows() {
+    const viewport = this.getLayoutViewport();
+    const terminal = this.windows.get('cmd-window')?.element;
+    const welcome = this.windows.get('welcome-window')?.element;
+    const about = this.windows.get('about-window')?.element;
+
+    if (!terminal || !welcome || !about) return;
+
+    const taskbarHeight = 40;
+    const gap = 8;
+    const availableHeight = Math.max(320, viewport.height - taskbarHeight - gap);
+
+    if (viewport.width < 800) {
+      const terminalHeight = Math.max(220, Math.min(availableHeight * 0.38, 320));
+      const contentHeight = availableHeight - terminalHeight;
+      const windowWidth = Math.max(250, viewport.width * 0.78);
+
+      terminal.style.left = '8px';
+      terminal.style.top = `${availableHeight - terminalHeight + 8}px`;
+      terminal.style.width = `${viewport.width - 16}px`;
+      terminal.style.height = `${terminalHeight}px`;
+
+      welcome.style.left = '8px';
+      welcome.style.top = '8px';
+      welcome.style.width = `${windowWidth}px`;
+      welcome.style.height = `${Math.max(220, contentHeight * 0.82)}px`;
+      about.style.left = '40px';
+      about.style.top = '40px';
+      about.style.width = `${windowWidth}px`;
+      about.style.height = `${Math.max(220, contentHeight * 0.82)}px`;
+      return;
+    }
+
+    const terminalWidth = Math.min(viewport.width * 0.215, 340);
+    const workspaceWidth = viewport.width - terminalWidth - gap;
+    const workspaceHeight = availableHeight;
+
+    terminal.style.left = `${viewport.width - terminalWidth}px`;
+    terminal.style.top = '4px';
+    terminal.style.width = `${terminalWidth - 4}px`;
+    terminal.style.height = `${workspaceHeight}px`;
+
+    welcome.style.left = `${workspaceWidth * 0.14}px`;
+    welcome.style.top = `${workspaceHeight * 0.1}px`;
+    welcome.style.width = `${workspaceWidth * 0.52}px`;
+    welcome.style.height = `${workspaceHeight * 0.58}px`;
+
+    about.style.left = `${workspaceWidth * 0.41}px`;
+    about.style.top = `${workspaceHeight * 0.2}px`;
+    about.style.width = `${workspaceWidth * 0.56}px`;
+    about.style.height = `${workspaceHeight * 0.64}px`;
   }
   
   attemptStartupSound() {
@@ -293,7 +350,7 @@ class Desktop95 {
           this.terminalInitialized = true;
         }
         if (!this.botAssistantShown && !this.questStarted) {
-          this.showBotAssistant("terminal access granted. type 'quest' to investigate rothman's disappearance. or type 'help' for corrupted commands.");
+          this.showBotAssistant("terminal access granted. type 'quest' to investigate the mesh. or type 'help' for available commands.");
         }
       }
     }, 1000);
