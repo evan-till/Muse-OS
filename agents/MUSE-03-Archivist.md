@@ -1,4 +1,4 @@
-# GROK-03 Archivist
+# MUSE-03 Archivist
 
 ## Role
 Timeline stitching, retained variants, continuity.

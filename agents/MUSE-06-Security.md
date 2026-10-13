@@ -1,4 +1,4 @@
-# GROK-06 Security
+# MUSE-06 Security
 
 ## Role
 Sandbox profiles, permission layers, intrusion drills.

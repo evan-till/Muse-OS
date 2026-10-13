@@ -1,8 +1,8 @@
 {
-  "name": "groknodes",
+  "name": "museos",
   "version": "0.0.0",
   "private": true,
-  "description": "A live multi-instance operating system authored by Grok Bot nodes.",
+  "description": "A live multi-instance operating system authored by Meta Muse agents.",
   "keywords": [
     "framework",
     "nothing",
@@ -15,7 +15,7 @@
     "monorepo"
   ],
   "license": "MIT",
-  "author": "The useless bot Team",
+  "author": "MuseOS Team",
   "workspaces": [
     "packages/*"
   ],
